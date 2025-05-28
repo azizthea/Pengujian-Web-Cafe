@@ -1,0 +1,12 @@
+Formal Inspection - Code Walkthrough
+Penanggung Jawab: Tiara Putri Latifani Dianata
+
+Deskripsi:
+Formal inspection adalah proses review kode secara terstruktur dan sistematis.
+
+Langkah-langkah:
+1. Persiapan dokumen
+2. Meeting reviewer
+3. Review baris per baris
+4. Catat isu & perbaikan
+5. Developer revisi kode
