@@ -44,12 +44,19 @@ Fitur yang diuji: register, login, troli
 
 
 ## troli
-| **Test Case** | **Deskripsi**                                | Input            | **Ekpetasi**                                            | **Realita**                                          |
-| ------------- | -------------------------------------------- | -------------------- | -------------------------------------------------------- | ---------------------------------------------------------------------- |
-| TC01          | Nilai batas minimum valid                    | 1                    | Jumlah produk diubah ke 1, total harga berubah           | ✅ Jumlah diubah ke 1, total terupdate dengan benar                     |
-| TC02          | Nilai tepat di atas minimum                  | 2                    | Jumlah produk diubah ke 2, total harga berubah           | ✅ Berfungsi dengan baik                                                |
-| TC03          | Nilai tepat di bawah minimum (**invalid**)   | 0                    | Input ditolak atau dikembalikan ke 1                     | ❌ Nilai input tidak brubah dan Browser menampilkan pesan “value must be greater than or equal to 1” |
-| TC04          | Nilai batas atas valid (misalnya 100)        | 100                  | Jumlah diubah ke 100, total dikalikan dengan benar       | ✅ Jumlah 100 berhasil, total sesuai                                    |
-| TC05          | Nilai tepat di bawah batas atas              | 99                   | Jumlah diubah ke 99, total dikalikan dengan benar        | ✅ Sama seperti TC04                                                    |
-| TC06          | Nilai tepat di atas batas atas (**invalid**) | 101                  | Input ditolak atau dibatasi ke 100 (jika ada batas atas) | ❌ Masih bisa input 101 karena tidak ada batas atas di HTML maupun PHP |
+| **Test Case** | **Deskripsi**                                | **Input** | **Ekspektasi**                                           | **Realita**                                                                                          | **Gambar Bukti** |
+| ------------- | -------------------------------------------- | --------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------- |
+| TC01          | Nilai batas minimum valid                    | 1         | Jumlah produk diubah ke 1, total harga berubah           | ✅ Jumlah diubah ke 1, total terupdate dengan benar                                                   | ![image](https://github.com/user-attachments/assets/3df6db91-b73f-4804-9712-563169d0612a)
+#)       |
+| TC02          | Nilai tepat di atas minimum                  | 2         | Jumlah produk diubah ke 2, total harga berubah           | ✅ Berfungsi dengan baik                                                                              | ![image](https://github.com/user-attachments/assets/b9c7369c-8108-4d53-af60-bbf31e9e4a8f)
+#)       |
+| TC03          | Nilai tepat di bawah minimum (**invalid**)   | 0         | Input ditolak atau dikembalikan ke 1                     | ❌ Nilai input tidak berubah dan browser menampilkan pesan “value must be greater than or equal to 1” | ![image](https://github.com/user-attachments/assets/3c54bf89-852c-4b47-9281-8c739c1c1adb)
+#)       |
+| TC04          | Nilai batas atas valid (100)        | 100       | Jumlah diubah ke 100, total dikalikan dengan benar       | ✅ Jumlah 100 berhasil, total sesuai                                                                  | ![image](https://github.com/user-attachments/assets/03e118ad-2a2a-4117-b3e7-684b76653fa2)
+#)       |
+| TC05          | Nilai tepat di bawah batas atas              | 99        | Jumlah diubah ke 99, total dikalikan dengan benar        | ✅ Sama seperti TC04                                                                                  | ![image](https://github.com/user-attachments/assets/26b7aa9d-714f-410a-880c-d89a99547949)
+#)       |
+| TC06          | Nilai tepat di atas batas atas (**invalid**) | 1000       | Input ditolak atau dibatasi ke 100  | ❌ Masih bisa input 1000 karena tidak ada batas atas di HTML maupun PHP                                |![image](https://github.com/user-attachments/assets/84746a74-87ef-4ed5-9bc4-8bae0da4ebb1)
+#)       |
+
 
