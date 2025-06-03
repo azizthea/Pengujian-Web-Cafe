@@ -1,20 +1,15 @@
+### 📋 Tabel Pengujian Robustness 
 
-### 📋 Tabel Pengujian Robustness Terpadu
+| Halaman     | No | Jenis Uji               | Input Khusus         | Expected Result              | Status | Bukti Gambar |
+|-------------|----|-------------------------|----------------------|------------------------------|--------|--------------|
+| **register** | 1  | Input kosong            | `Form Kosong` | Error "Username diperlukan" | ✅ | ![Error kosong](https://via.placeholder.com/150?text=Error+Kosong) |
+| **register** | 2  | Email invalid           | `invalid-email`      | Error "Email tidak valid"    | ✅ | ![Error email](https://via.placeholder.com/150?text=Error+Email) |
+| **register** | 3  | Konfirmasi salah        | `pass123` ≠ `pass456`| Error "Password tidak cocok" | ✅ | ![Error password](https://via.placeholder.com/150?text=Error+Password) |
+| **login** | 4  | Password salah          | `salah123`           | Error "Credential salah"     | ✅ | ![Error login](https://via.placeholder.com/150?text=Error+Login) |
+| **login** | 5  | Login valid             | Data benar           | Redirect ke index.php        | ✅ | ![Login sukses](https://via.placeholder.com/150?text=Login+Sukses) |
+| **Troli** | 6  | Tambah item             | Qty: 2               | Item masuk cart              | ✅ | ![Cart+item](https://via.placeholder.com/150?text=Cart+Item) |
+| **Troli** | 7  | Update quantity         | Qty: 2 → 3           | Subtotal update              | ✅ | ![Cart update](https://via.placeholder.com/150?text=Cart+Update) |
+| **Troli** | 8  | Hapus item              | Klik hapus           | Item terhapus                | ✅ | ![Cart kosong](https://via.placeholder.com/150?text=Cart+Kosong) |
 
-| Halaman     | No | Jenis Uji                     | Input Khusus                          | Expected Result                                      | Actual Result                    | Status | Bukti Visual |
-|-------------|----|-------------------------------|---------------------------------------|-----------------------------------------------------|----------------------------------|--------|--------------|
-| **register.php** | 1  | Input panjang (300 karakter)  | Username: 300 huruf 'a'               | Stabil (boleh gagal validasi)                      | Tidak crash, input diproses      | ✅     | [Gambar] |
-|             | 2  | Karakter emoji                | Username: `😊🔥👩‍💻`                  | Error/Tolak tanpa crash                            | Error: "Tidak boleh emoji"       | ✅     | [Gambar] |
-|             | 3  | Spasi kosong                  | Username: (spasi)                     | Error "Username diperlukan"                        | Error muncul                     | ✅     | [Gambar] |
-|             | 4  | XSS attempt                   | Username: `<script>alert(1)</script>` | Aman (escape karakter)                             | Tidak dieksekusi                 | ✅     | [Gambar] |
-|             | 5  | Email invalid                 | Email: `invalid-email`                | Error "Email tidak valid"                          | Error muncul                     | ✅     | [Gambar] |
-|             | 6  | Password pendek               | Password: `pass`                      | Error "Minimal 6 karakter"                         | Error muncul                     | ✅     | [Gambar] |
-|             | 7  | Konfirmasi salah              | Password ≠ Confirm                    | Error "Password tidak cocok"                       | Error muncul                     | ✅     | [Gambar] |
-|             | 8  | Data valid                    | Semua input benar                     | Redirect ke login                                  | Berhasil redirect                | ✅     | [Gambar] |
-| **login.php** | 9  | Password salah                | Password: `salah123`                  | Error "Username/password salah"                    | Error muncul                     | ✅     | [Gambar] |
-|             | 10 | Login valid                   | Data terdaftar                        | Redirect ke index.php                              | Berhasil login                   | ✅     | [Gambar] |
-| **keranjang.php** | 11 | Tambah item                   | Produk: Espresso, Qty: 2              | Item masuk session cart                            | Cart terupdate                   | ✅     | [Gambar] |
-|             | 12 | Update quantity               | Ubah Qty: 2 → 3                       | Subtotal berubah                                   | Harga terupdate                  | ✅     | [Gambar] |
-|             | 13 | Hapus item                    | Klik tombol hapus                     | Item hilang dari cart                              | Cart_count berkurang             | ✅     | [Gambar] |
-|             | 14 | Keranjang kosong              | Kosongkan cart                        | Pesan "Keranjang kosong"                           | Tombol checkout hilang           | ✅     | [Gambar] |
+---
 
