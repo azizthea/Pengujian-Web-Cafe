@@ -2,14 +2,14 @@
 
 | Halaman     | No | Jenis Uji               | Input Khusus         | Expected Result              | Status | Bukti Gambar |
 |-------------|----|-------------------------|----------------------|------------------------------|--------|--------------|
-| **register** | 1  | Input kosong            | `Form Kosong` | Error "Username diperlukan" | ✅ | ![Error kosong](https://via.placeholder.com/150?text=Error+Kosong) |
-| **register** | 2  | Email invalid           | `invalid-email`      | Error "Email tidak valid"    | ✅ | ![Error email](https://via.placeholder.com/150?text=Error+Email) |
-| **register** | 3  | Konfirmasi salah        | `pass123` ≠ `pass456`| Error "Password tidak cocok" | ✅ | ![Error password](https://via.placeholder.com/150?text=Error+Password) |
-| **login** | 4  | Password salah          | `salah123`           | Error "Credential salah"     | ✅ | ![Error login](https://via.placeholder.com/150?text=Error+Login) |
-| **login** | 5  | Login valid             | Data benar           | Redirect ke index.php        | ✅ | ![Login sukses](https://via.placeholder.com/150?text=Login+Sukses) |
-| **Troli** | 6  | Tambah item             | Qty: 2               | Item masuk cart              | ✅ | ![Cart+item](https://via.placeholder.com/150?text=Cart+Item) |
-| **Troli** | 7  | Update quantity         | Qty: 2 → 3           | Subtotal update              | ✅ | ![Cart update](https://via.placeholder.com/150?text=Cart+Update) |
-| **Troli** | 8  | Hapus item              | Klik hapus           | Item terhapus                | ✅ | ![Cart kosong](https://via.placeholder.com/150?text=Cart+Kosong) |
+| **register** | 1  | Input kosong            | `Form Kosong` | Error "Username diperlukan" | ✅ | ![image](https://github.com/user-attachments/assets/c7f398c2-965a-4c05-a33d-8bb519d1c285)
+) |
+| **register** | 2  | Email invalid 20 karakter           | `invalid-email`      | Error "Email tidak valid"    | ❌ | ![image](https://github.com/user-attachments/assets/bea9de92-86ef-4850-bc7f-bcf4225548c4)
+) |
+| **produck** | 3  | produck                 | pesanan              | tidak bisa memesan sebelum login | ❌ |![image](https://github.com/user-attachments/assets/597e8d60-088c-4b7d-a86a-e3f3cc2ac677)
+) |
+| **produck** | 4  | troli          | `pesanan`           | tidak bisa memesan sebelum login     | ❌ | ![image](https://github.com/user-attachments/assets/9b90ef42-387c-4525-a76d-5387b533f6bb)
+) |
 
 ---
 
