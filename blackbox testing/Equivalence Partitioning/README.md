@@ -25,7 +25,7 @@
 | EP3 | password |  "salah"              | error                          | error         | ✅      |
 | EP4 |  password |  "benar"              | sukses (redirect ke index.php) | sukses        | ✅      |
 
-# order
+# troli
 
 | No   | Parameter                        | Kelas Equivalen (Input)                                          | Valid / Invalid | Expected Output             | Actual Output      | Status |
 | ---- | -------------------------------- | ---------------------------------------------------------------- | --------------- | --------------------------- | ------------------ | ------ |
