@@ -7,9 +7,12 @@ Fitur yang diuji: register, login, troli
 ## Register
 | No. | Parameter          | Nilai Uji              | Ekspektasi                                 | Realita                            | Status | Gambar Bukti |
 | --- | ------------------ | ---------------------- | ------------------------------------------ | ---------------------------------- | ------ | ------------ |
-| 1   | `username`         | `abc` (3 karakter)     | Ditolak karena < 4 karakter                | Form menolak input                 | ✅      | ![img1](#)   |
-| 2   | `username`         | `20 karakter`          | Ditolak karena username terlalu panjang    | Form menerima input                | ❌      | ![img2](#)   |
-| 3   | `username`         | `5 karakter`           | Diterima karena di atas batas minimal      | Form menerima input                | ✅      | ![img3](#)   |
+| 1   | `username`         | `abc` (3 karakter)     | Ditolak karena < 4 karakter                | Form menolak input                 | ✅      | ![image](https://github.com/user-attachments/assets/6fa6f043-e31f-411b-bce9-46051f30a835)
+#)   |
+| 2   | `username`         | `20 karakter`          | Ditolak karena username terlalu panjang    | Form menerima input                | ❌      | ![image](https://github.com/user-attachments/assets/90a5f12f-9b26-4c20-971a-b6626a7c4733)
+#)   |
+| 3   | `username`         | `5 karakter`           | Diterima karena di atas batas minimal      | Form menerima input                | ✅      | (![image](https://github.com/user-attachments/assets/71982da2-9878-4a73-bb16-b18f101987af)
+#)   |
 | 4   | `email`            | `abc`                  | Ditolak karena format tidak valid          | Validasi gagal (email tidak valid) | ✅      | ![img4](#)   |
 | 5   | `email`            | `20 karakter`          | Ditolak karena format tidak valid          | Validasi gagal (email tidak valid) | ✅      | ![img5](#)   |
 | 6   | `email`            | `abc@example.com`      | Ditolak karena bukan domain gmail          | Validasi berhasil                  | ❌      | ![img6](#)   |
