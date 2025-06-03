@@ -8,8 +8,8 @@ Dokumen ini berisi hasil pengujian *Comparison Testing* terhadap dua fitur utama
 
 | No | Fitur     | Aspek Diuji           | Versi Lama                                      | Versi Baru                                      | Status     |
 |----|-----------|------------------------|--------------------------------------------------|--------------------------------------------------|------------|
-| 1  | Register  |  username              | Tidak validasi format email                     | Validasi email dengan regex                     | ✅ Lulus    |
-| 2  | Register  | Validasi Password      | Minimal 4 karakter                              | Minimal 8 karakter + kombinasi                  | ✅ Lulus    |
+| 1  | Register  |  username              | isi kolom > 15 karakter tanpa error             | isi kolom maksimal 15 karakter                    | ✅ Lulus    |
+| 2  | Register  | email                  | Minimal 4 karakter                              | Minimal 8 karakter + kombinasi                  | ✅ Lulus    |
 | 3  | Register  | Notifikasi Berhasil    | Tidak ada                                       | Menampilkan pesan sukses                       | ✅ Lulus    |
 | 4  | Register  | Duplikasi Email        | Tidak dicek                                     | Muncul pesan error jika email sudah terdaftar  | ✅ Lulus    |
 | 5  | Keranjang | Tambah Produk          | Produk bertambah tapi tidak tampil langsung     | Produk langsung tampil di keranjang             | ✅ Lulus    |
