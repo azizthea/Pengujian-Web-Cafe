@@ -35,15 +35,15 @@
 | T5        | False          | False          | -              | -              | False          |  Username atau password salah |
 | T6        | True           | True           | True           | False          | False          |  Username atau password salah |
 
-## Tabel Keputusan Login
+## Tabel Keputusan troli
 | No | C1 (Hapus) | C2 (Update) | C3 (Ada?) | C4 (Jumlah Valid?) | Hasil                   |
 | -- | ---------- | ----------- | --------- | ------------------ | ----------------------- |
-| 1  | ✅          | ❌           | ✅         | -                  | A1: Item dihapus        |
-| 2  | ✅          | ❌           | ❌         | -                  | A3: Tidak ada perubahan |
-| 3  | ❌          | ✅           | ✅         | ✅                  | A2: Jumlah diperbarui   |
-| 4  | ❌          | ✅           | ✅         | ❌                  | A3: Tidak ada perubahan |
-| 5  | ❌          | ✅           | ❌         | ✅                  | A3: Tidak ada perubahan |
-| 6  | ❌          | ❌           | -         | -                  | A3: Tidak ada perubahan |
+| 1  | True          | False           | True         | -                  | A1: Item dihapus        |
+| 2  | True          | False           | False         | -                  | A3: Tidak ada perubahan |
+| 3  | False          | True           | True         | True                  | A2: Jumlah diperbarui   |
+| 4  | False          | True           | True         | False                  | A3: Tidak ada perubahan |
+| 5  | False          | True           |False         | True                  | A3: Tidak ada perubahan |
+| 6  | False          | False           | -         | -                  | A3: Tidak ada perubahan |
 
 
 ## Penjelasan Status
