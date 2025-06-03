@@ -1,5 +1,4 @@
 **TABEL PENGUJIAN GRAY-BOX – WEBSITE CAFE AROMA**
-
 | No | Test Case ID     | Modul/Fitur        | Input Data                                                    | Expected Output                                     | Actual Output                   | Status (Pass/Fail) | Notes                                   |
 | -- | ---------------- | ------------------ | ------------------------------------------------------------- | --------------------------------------------------- | ------------------------------- | ------------------ | --------------------------------------- |
 | 1  | TC-GB-CKOUT-001  | Checkout           | Lanjutkan pemesanan produk yang telah dipilih                 | Transaksi tercatat, muncul detail pesanan dan total | Detail tidak muncul             | **Fail**           | Validasi akhir transaksi tidak berhasil |
@@ -15,3 +14,5 @@
 | 11 | TC-GB-REG-002    | Registrasi         | Email acak valid (`abc123@gmail.com`)                         | Email diterima                                      | Email diterima                  | **Pass**           | Validasi email berhasil                 |
 | 12 | TC-GB-REG-003    | Registrasi         | Password panjang > 20 karakter (`passwordpanjangsekali123`)   | Password ditolak                                    | Password diterima               | **Fail**           | Tidak ada batasan panjang password      |
 | 13 | TC-GB-REG-004    | Registrasi         | Username/email/password sudah terdaftar sebelumnya            | Registrasi ditolak, muncul pesan error              | Registrasi ditolak              | **Pass**           | Duplikasi data ditolak dengan baik      |
+| 14 | TC-GB-TROL-001   | Troli              | Tambahkan dan hapus produk dari troli                         | Produk ditampilkan sesuai perubahan, total berubah  | Fungsi tambah/hapus bekerja     | **Pass**           | Fungsi troli dinamis dan akurat         |
+| 15 | TC-GB-STRUK-001  | Struk Pemesanan    | Selesaikan checkout dan minta cetak struk                     | Struk tampil dengan item, harga, total, dan waktu   | Struk tidak muncul              | **Fail**           | Modul cetak struk belum terhubung       |
