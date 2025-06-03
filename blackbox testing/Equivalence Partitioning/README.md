@@ -31,7 +31,7 @@
 | ------ | -------------------------------------------- | -------------------------------- | ---------------------------------------------------- | --------------------------------- |
 | TC01   | Update jumlah produk dengan angka valid      | quantity = 3                     | Jumlah produk berubah jadi 3, total harga diperbarui | ✅ Jumlah berubah dan total sesuai |
 | TC02   | Update jumlah dengan angka minimum valid     | quantity = 1                     | Tetap bisa, tidak error                              | ✅ Berfungsi normal                |
-| TC03   | Update jumlah dengan angka tidak valid (nol) | quantity = 0                     | ditolak kembali ke jumlah 1  | ❌ Jumlah jadi 0 (harus dicegah)   |
+| TC03   | Update jumlah dengan angka tidak valid (nol) | quantity = 0                     | tidak diterima dikembalikan ke 1                            | ❌ jumlah tetap tidak ada perubahan   |
 | TC04   | Update jumlah dengan angka negatif           | quantity = -2                    | Tidak boleh diterima, muncul error atau ditolak      | ❌ Jumlah bisa jadi negatif (bug)  |
 | TC05   | Update jumlah dengan angka sangat besar      | quantity = 999                   | Jumlah berubah jadi 999 jika tidak dibatasi          | ✅ Jumlah berubah, total besar     |
 | TC06   | Hapus produk yang ada di keranjang           | Klik tombol hapus                | Produk hilang dari tabel, total berkurang            | ✅ Produk terhapus, total berubah  |
