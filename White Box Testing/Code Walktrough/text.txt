@@ -1,12 +1,83 @@
-Formal Inspection - Code Walkthrough
+White Box Testing – Model: Code Walkthrough
+Aplikasi: Sistem Pemesanan Cafe
+Fungsi yang direview: prosesPembayaran(total, metode, isMember)
+
+---------------------------------------------------
+Kode Sumber (JavaScript)
+---------------------------------------------------
+
+function prosesPembayaran(total, metode, isMember) {
+  let diskon = 0;
+
+  if (isMember) {
+    if (total >= 100000) {
+      diskon = 0.1 * total;
+    } else {
+      diskon = 0.05 * total;
+    }
+  }
+
+  let totalBayar = total - diskon;
+
+  if (metode === "cash") {
+    return "Bayar tunai sebesar " + totalBayar;
+  } else if (metode === "qris") {
+    return "Scan QR untuk membayar " + totalBayar;
+  } else {
+    return "Metode pembayaran tidak dikenali";
+  }
+}
+
+---------------------------------------------------
+Prosedur Code Walkthrough
+---------------------------------------------------
+
+📌 Tahap 1 – Persiapan:
+- Reviewer: Programmer 1, Programmer 2, Tester
+- Tujuan: Meninjau logika diskon dan validasi metode pembayaran
+
+📌 Tahap 2 – Pemahaman Kode:
+- Baris 2–3: Inisialisasi diskon
+- Baris 4–8: Pengecekan apakah user member dan besar total transaksi
+- Baris 10: Hitung total bayar setelah diskon
+- Baris 12–18: Percabangan berdasarkan metode pembayaran
+
+📌 Tahap 3 – Diskusi & Review:
+✅ Positif:
+- Logika diskon member sudah diperiksa dengan dua kondisi
+- Alur metode pembayaran ditangani dengan baik (cash, qris, lainnya)
+
+⚠️ Catatan/Kritik:
+- Tidak ada validasi nilai `total` negatif atau kosong
+- Tidak menangani jika metode pembayaran adalah `null` atau `undefined`
+- Perlu menambahkan log transaksi untuk keperluan audit
+
+📌 Tahap 4 – Rekomendasi Perbaikan:
+- Tambahkan validasi input awal:
+  if (total <= 0 || typeof total !== 'number') return "Total tidak valid";
+
+---------------------------------------------------
+White Box Testing – Model: Formal Inspection
 Penanggung Jawab: Tiara Putri Latifani Dianata
 
 Deskripsi:
-Formal inspection adalah proses review kode secara terstruktur dan sistematis.
+Formal Inspection adalah proses pemeriksaan kode secara **sistematis dan terstruktur**
+untuk menemukan cacat logika, kesalahan sintaks, dan pelanggaran standar coding.
 
 Langkah-langkah:
-1. Persiapan dokumen
-2. Meeting reviewer
-3. Review baris per baris
-4. Catat isu & perbaikan
-5. Developer revisi kode
+1. **Persiapan Dokumen**
+   - Cetak/siapkan potongan kode `prosesPembayaran` beserta logika pendukungnya
+2. **Meeting Reviewer**
+   - Tim QA, Developer, dan Reviewer berkumpul membahas setiap bagian kode
+3. **Review Baris per Baris**
+   - Periksa deklarasi variabel, kontrol logika, dan alur kondisi
+4. **Catat Isu & Perbaikan**
+   - Contoh isu: tidak ada validasi `total`, metode bisa `null`, tidak ada logging
+5. **Developer Revisi Kode**
+   - Setelah review, developer melakukan perubahan sesuai masukan
+
+Catatan:
+✓ Proses dilakukan formal, biasanya dicatat dalam dokumen laporan QA
+✓ Dokumentasi inspeksi disimpan sebagai bukti jaminan kualitas kode
+
+---------------------------------------------------
