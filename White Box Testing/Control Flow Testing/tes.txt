@@ -1,10 +1,82 @@
-Control Flow Testing - Basic Path Testing
+White Box Testing – Model: Control Flow Testing
+Aplikasi: Sistem Pemesanan Cafe
+Fungsi yang diuji: prosesPembayaran(total, metode, isMember)
 
-Tujuan:
-- Menguji semua jalur logika dalam program.
-- Menjamin bahwa tidak ada path yang terlewatkan dalam eksekusi.
+---------------------------------------------------
+Kode Sumber (Contoh – JavaScript)
+---------------------------------------------------
 
-Langkah-langkah:
-1. Buat control flow graph.
-2. Identifikasi path independen.
-3. Buat dan jalankan test case untuk setiap path.
+function prosesPembayaran(total, metode, isMember) {
+  let diskon = 0;
+
+  if (isMember) {
+    if (total >= 100000) {
+      diskon = 0.1 * total;
+    } else {
+      diskon = 0.05 * total;
+    }
+  }
+
+  let totalBayar = total - diskon;
+
+  if (metode === "cash") {
+    return "Bayar tunai sebesar " + totalBayar;
+  } else if (metode === "qris") {
+    return "Scan QR untuk membayar " + totalBayar;
+  } else {
+    return "Metode pembayaran tidak dikenali";
+  }
+}
+
+---------------------------------------------------
+Control Flow Graph (CFG)
+---------------------------------------------------
+
+Node:
+[1] Mulai
+[2] isMember?
+[3] total >= 100000?
+[4] diskon = 10%
+[5] diskon = 5%
+[6] totalBayar = total - diskon
+[7] metode === "cash"?
+[8] Return tunai
+[9] metode === "qris"?
+[10] Return QRIS
+[11] Return error
+
+Edge:
+1→2→3→4→6→7→8
+          ↘5→6→7→9→10
+                      ↘11
+
+---------------------------------------------------
+Skenario Uji Berdasarkan Alur Kontrol
+---------------------------------------------------
+
+Test Case 1:
+  isMember = true, total = 150000, metode = "cash"
+  → diskon 10%, return tunai
+  → Path: 1→2→3→4→6→7→8
+
+Test Case 2:
+  isMember = true, total = 50000, metode = "qris"
+  → diskon 5%, return QR
+  → Path: 1→2→3→5→6→7→9→10
+
+Test Case 3:
+  isMember = false, metode = "transfer"
+  → tidak ada diskon, metode tidak dikenali
+  → Path: 1→2→6→7→9→11
+
+---------------------------------------------------
+Cyclomatic Complexity:
+V(G) = E - N + 2P = 11 edges - 10 nodes + 2*1 = 3
+→ Perlu minimal 3 test case untuk uji semua jalur logika
+
+---------------------------------------------------
+Kesimpulan:
+✓ Semua percabangan dan kondisi diuji (if-else dan logika diskon & metode).
+✓ Tidak ada kondisi yang terlewat.
+✓ Fungsi menangani input dengan jalur kontrol yang lengkap dan aman.
+---------------------------------------------------
