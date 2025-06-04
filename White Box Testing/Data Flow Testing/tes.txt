@@ -1,10 +1,75 @@
-Control Flow Testing - Basic Path Testing
+White Box Testing – Model: Data Flow Testing
+Aplikasi: Sistem Pemesanan Cafe
+Fungsi yang diuji: hitungTotal(pesanan, isMember)
 
-Tujuan:
-- Menguji semua jalur logika dalam program.
-- Menjamin bahwa tidak ada path yang terlewatkan dalam eksekusi.
+---------------------------------------------------
+Kode Sumber (Contoh Sederhana – JavaScript)
+---------------------------------------------------
 
-Langkah-langkah:
-1. Buat control flow graph.
-2. Identifikasi path independen.
-3. Buat dan jalankan test case untuk setiap path.
+function hitungTotal(pesanan, isMember) {
+  let total = 0;
+
+  for (let i = 0; i < pesanan.length; i++) {
+    total = total + pesanan[i].harga * pesanan[i].jumlah;
+  }
+
+  let diskon = 0;
+
+  if (isMember && total >= 100000) {
+    diskon = 0.1 * total;
+  }
+
+  let totalBayar = total - diskon;
+
+  return totalBayar;
+}
+
+---------------------------------------------------
+Analisis Aliran Data (Data Flow)
+---------------------------------------------------
+
+Variabel: total
+- Dideklarasikan: baris 2
+- Didefinisikan: baris 4 (diubah dalam loop)
+- Digunakan: baris 10 (untuk menghitung diskon), 13 (untuk totalBayar)
+
+Variabel: diskon
+- Dideklarasikan: baris 6
+- Didefinisikan: baris 8 jika kondisi terpenuhi
+- Digunakan: baris 12 (pengurangan dari total)
+
+Variabel: totalBayar
+- Dideklarasikan dan didefinisikan: baris 12
+- Digunakan: baris 14 (return value)
+
+---------------------------------------------------
+Skenario Uji Berdasarkan Aliran Data
+---------------------------------------------------
+
+Test Case 1:
+  Input: pesanan = [{harga: 20000, jumlah: 3}], isMember = true
+  → total = 60000
+  → isMember = true, tapi total < 100000 → diskon = 0
+  → totalBayar = 60000
+  Output: 60000
+
+Test Case 2:
+  Input: pesanan = [{harga: 50000, jumlah: 3}], isMember = true
+  → total = 150000
+  → isMember = true, total >= 100000 → diskon = 15000
+  → totalBayar = 135000
+  Output: 135000
+
+Test Case 3:
+  Input: pesanan = [], isMember = false
+  → total = 0
+  → diskon = 0
+  → totalBayar = 0
+  Output: 0
+
+---------------------------------------------------
+Kesimpulan:
+✓ Variabel `total`, `diskon`, dan `totalBayar` telah dideklarasikan, didefinisikan, dan digunakan dengan alur yang benar.
+✓ Tidak ditemukan anomali data seperti penggunaan variabel sebelum didefinisikan.
+✓ Semua jalur data diuji berdasarkan kombinasi kondisi dan struktur pesanan.
+---------------------------------------------------
