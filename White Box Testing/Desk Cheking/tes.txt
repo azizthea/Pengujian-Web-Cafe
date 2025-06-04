@@ -1,10 +1,68 @@
-Control Flow Testing - Basic Path Testing
+White Box Testing – Model: Desk Checking
+Aplikasi: Sistem Pemesanan Cafe
+Fungsi yang diuji: login(username, password)
 
-Tujuan:
-- Menguji semua jalur logika dalam program.
-- Menjamin bahwa tidak ada path yang terlewatkan dalam eksekusi.
+---------------------------------------------------
+Kode Sumber (Contoh Sederhana dalam JavaScript)
+---------------------------------------------------
 
-Langkah-langkah:
-1. Buat control flow graph.
-2. Identifikasi path independen.
-3. Buat dan jalankan test case untuk setiap path.
+function login(username, password) {
+  let user = getUserFromDatabase(username);
+
+  if (user == null) {
+    return "User tidak ditemukan";
+  }
+
+  if (user.password !== password) {
+    return "Password salah";
+  }
+
+  return "Login berhasil";
+}
+
+---------------------------------------------------
+Desk Checking - Pemeriksaan Variabel & Logika
+---------------------------------------------------
+
+[1] user = getUserFromDatabase(username)
+    - input username: dicek di database
+    - jika tidak ditemukan → user = null
+
+[2] if (user == null)
+    - TRUE → output: "User tidak ditemukan"
+    - FALSE → lanjut cek password
+
+[3] if (user.password !== password)
+    - TRUE → output: "Password salah"
+    - FALSE → lanjut
+
+[4] return "Login berhasil"
+    - jika username dan password cocok
+
+---------------------------------------------------
+Simulasi Input & Output (Desk Checking)
+---------------------------------------------------
+
+Test Case 1:
+  Input: username = "budi", password = "1234"
+  user = {username: "budi", password: "1234"}
+  → user ditemukan → password cocok
+  → Output: "Login berhasil"
+
+Test Case 2:
+  Input: username = "agus", password = "abcd"
+  user = null
+  → Output: "User tidak ditemukan"
+
+Test Case 3:
+  Input: username = "budi", password = "9999"
+  user = {username: "budi", password: "1234"}
+  → password salah
+  → Output: "Password salah"
+
+---------------------------------------------------
+Kesimpulan:
+✓ Semua jalur logika diuji
+✓ Pemeriksaan kondisi dan nilai variabel dilakukan manual
+✓ Fungsi login bekerja sesuai yang diharapkan
+---------------------------------------------------
