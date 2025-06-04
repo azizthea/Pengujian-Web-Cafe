@@ -6,7 +6,7 @@ Memeriksa logika login Cafe App secara manual dengan fokus pada:
 - Pengecekan user di database.
 - Verifikasi password.
 - Penanganan kesalahan login.
-
+  
 ## Langkah Desk Checking
 1. Cek apakah form login dikirim (via POST).
 2. Ambil nilai `username` dan `password`.
