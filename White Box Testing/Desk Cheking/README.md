@@ -33,8 +33,12 @@ Hasil
 Alur login berjalan baik dan sesuai logika.
 Tidak ditemukan error pada struktur atau proses autentikasi.
 
-Catatan Tambahan
+Catatan Tambahan:
+
 Jenis testing: Desk Checking (White Box Testing)
+
 Lingkup: Memastikan setiap fungsi dalam file PHP sesuai dengan alur logika dan struktur database
+
 Alat bantu: phpMyAdmin, XAMPP, browser
-Versi pengujian: Versi 2 (rinci dan terstruktur
+
+Versi pengujian: Versi 2 (rinci dan terstruktur)
