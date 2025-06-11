@@ -23,7 +23,7 @@ Repositori ini dibuat untuk mendokumentasikan proses **pengujian perangkat lunak
 
 ---
 
-## 👥 Kelompok Pengujian
+## 👥 Kelompok
 
 | No | Nama Anggota       | NIM         | 
 |----|--------------------|-------------|
