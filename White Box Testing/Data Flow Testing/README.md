@@ -2,8 +2,12 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Dokumentasi Data Flow Testing & DFD – Aplikasi Web Cafe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Flow Testing & DFD – Aplikasi Web Cafe</title>
   <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 20px;
@@ -18,11 +22,14 @@
       border-collapse: collapse;
       width: 100%;
       margin-bottom: 30px;
+      overflow-x: auto;
+      display: block;
     }
     th, td {
       border: 1px solid #999;
       padding: 10px;
       text-align: left;
+      font-size: 14px;
     }
     th {
       background-color: #004d7a;
@@ -34,9 +41,13 @@
       padding: 15px;
       overflow-x: auto;
       border-radius: 6px;
+      font-size: 14px;
     }
     code {
       font-family: monospace;
+    }
+    ul {
+      padding-left: 20px;
     }
   </style>
 </head>
