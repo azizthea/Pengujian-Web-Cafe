@@ -56,12 +56,16 @@ Repositori ini dibuat untuk mendokumentasikan proses **pengujian perangkat lunak
 - **Data Flow Testing → Loop Testing**
 
 ### 2️⃣ Black Box Testing
-- **Equivalence Partitioning → Boundary Value Analysis**
-- **Decision Table Testing**
-- **Robustness Testing**
-- **Cause-Effect Graphing**
-- **Performance Testing**
-
+- **Boundary Value Analysis**  
+- **Equivalence Partitioning**  
+- **Comparison Testing**  
+- **Decision Table Testing**  
+- **Sample Testing**  
+- **Robustness Testing**  
+- **Behaviour Testing**  
+- **Performance Testing**  
+- **Endurance Testing**  
+- **Cause-Effect Relationship Testing**  
 ### 3️⃣ Gray Box Testing
 - **Regression Testing**
 - **Orthogonal Array Testing**
