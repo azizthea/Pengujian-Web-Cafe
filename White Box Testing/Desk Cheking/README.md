@@ -1,13 +1,13 @@
 # 📋 White Box Testing – Desk Checking Aplikasi Web Cafe
 
-| **Bagian**          | **Komponen**         | **Deskripsi Pemeriksaan**                                                              | **Hasil Pemeriksaan**                            | **Screenshot Tampilan** |
-|---------------------|----------------------|------------------------------------------------------------------------------------------|--------------------------------------------------|--------------------------|
-| Autentikasi         | `register.php`       | Input disimpan ke database `users` setelah password di-hash menggunakan `password_hash()` | ✔️ Data pengguna tersimpan, password dalam bentuk hash | *(lampirkan gambar)*    |
-| Autentikasi         | `login.php`          | Validasi password menggunakan `password_verify()` dan inisialisasi session login         | ✔️ Login berhasil jika data valid               | *(lampirkan gambar)*    |
-| Menu Makanan        | `menu.php`           | Menampilkan daftar produk dari tabel `produk` menggunakan `mysqli_fetch_assoc()`        | ✔️ Produk ditampilkan dengan benar              | *(lampirkan gambar)*    |
-| Manajemen Pesanan   | `order.php`          | Input pesanan disimpan ke tabel `orders` dan `order_items`                              | ✔️ Pesanan tersimpan, relasi dengan menu valid  | *(lampirkan gambar)*    |
-| Dashboard Admin     | `admin/index.php`    | Menampilkan statistik total pesanan, produk, user, dll dari beberapa tabel (SQL JOIN)   | ✔️ Statistik muncul sesuai data di database     | *(lampirkan gambar)*    |
-| Hapus Produk        | `delete_produk.php`  | Menghapus produk berdasarkan `id` yang dikirim melalui URL (metode GET)                 | ✔️ Produk berhasil dihapus dari database        | *(lampirkan gambar)*    |
+| **Bagian**          | **Komponen**         | **Deskripsi Pemeriksaan**                                                              | **Hasil Pemeriksaan**                            |
+|---------------------|----------------------|------------------------------------------------------------------------------------------|--------------------------------------------------|
+| Autentikasi         | `register.php`       | Input disimpan ke database `users` setelah password di-hash menggunakan `password_hash()` | ✔️ Data pengguna tersimpan, password dalam bentuk hash |
+| Autentikasi         | `login.php`          | Validasi password menggunakan `password_verify()` dan inisialisasi session login         | ✔️ Login berhasil jika data valid               |
+| Menu Makanan        | `menu.php`           | Menampilkan daftar produk dari tabel `produk` menggunakan `mysqli_fetch_assoc()`        | ✔️ Produk ditampilkan dengan benar              |
+| Manajemen Pesanan   | `order.php`          | Input pesanan disimpan ke tabel `orders` dan `order_items`                              | ✔️ Pesanan tersimpan, relasi dengan menu valid  |
+| Dashboard Admin     | `admin/index.php`    | Menampilkan statistik total pesanan, produk, user, dll dari beberapa tabel (SQL JOIN)   | ✔️ Statistik muncul sesuai data di database     |
+| Hapus Produk        | `delete_produk.php`  | Menghapus produk berdasarkan `id` yang dikirim melalui URL (metode GET)                 | ✔️ Produk berhasil dihapus dari database        |
 
 ---
 
@@ -16,7 +16,7 @@
 - **Jenis Pengujian**: Desk Checking (White Box Testing)  
 - **Lingkup**: Memastikan setiap fungsi dalam file PHP berjalan sesuai alur logika dan struktur database  
 - **Alat Bantu**: phpMyAdmin, XAMPP, browser  
-- **Versi Pengujian**: Versi 2 (rinci dan terstruktur)  
+- **Versi Pengujian**: Rinci dan terstruktur  
 
 ---
 
