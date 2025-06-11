@@ -25,12 +25,12 @@ Repositori ini dibuat untuk mendokumentasikan proses **pengujian perangkat lunak
 
 ## 👥 Kelompok Pengujian
 
-| No | Nama Anggota       | NIM         | Peran                            |
-|----|--------------------|-------------|----------------------------------|
-| 1  | Abdul Aziz Nurahmat        | 20221310019  | Pengembang dan Dokumentasi       |
-| 2  | Tiara PLD        | 20221310086       | White Box Testing                |
-| 3  | Miftah Rizkia        | 20221310025       | Black Box Testing                |
-| 4  | Iqbal Yudiana        | 20221310020       | Grey Box Testing                 |
+| No | Nama Anggota       | NIM         | 
+|----|--------------------|-------------|
+| 1  | Abdul Aziz Nurahmat        | 20221310019  | 
+| 2  | Tiara PLD        | 20221310086       | 
+| 3  | Miftah Rizkia        | 20221310025       | 
+| 4  | Iqbal Yudiana        | 20221310020       | 
 
 > *Silakan sesuaikan nama dan NIM sesuai anggota kelompok.*
 
