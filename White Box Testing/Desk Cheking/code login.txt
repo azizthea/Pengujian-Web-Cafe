@@ -1,0 +1,18 @@
+# White Box Testing – Desk Checking login.php
+
+## Tujuan
+Memastikan proses login user berjalan sesuai alur logika, aman terhadap kesalahan umum, dan memberikan feedback yang tepat.
+
+## Pemeriksaan Manual
+
+✔️ 1. Session dan Dependensi
+- Menggunakan `session_start()` untuk memulai session.
+- Memanggil `require 'db.php'` untuk mengakses koneksi database via PDO.
+✅ Siap memproses data user secara aman.
+
+✔️ 2. Handle Pesan Sukses
+```php
+if (isset($_SESSION['success_message'])) {
+    $success = $_SESSION['success_message'];
+    unset($_SESSION['success_message']);
+}
