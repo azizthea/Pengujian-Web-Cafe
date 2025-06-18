@@ -1,0 +1,33 @@
+# White Box Testing – Desk Checking logout.php
+
+## Tujuan
+Memastikan bahwa proses logout menghapus session pengguna dan mengembalikan pengguna ke halaman login.
+
+## Pemeriksaan Manual
+
+✔️ 1. Memulai Session
+session_start();
+✅ Session dimulai untuk bisa dihapus/dihancurkan.
+
+✔️ 2. Menghapus Isi Session
+$_SESSION = array();
+✅ Semua variabel session dikosongkan.
+
+✔️ 3. Menghancurkan Session
+session_destroy();
+✅ Menghapus session dari server.
+
+✔️ 4. Redirect ke Login
+header('Location: login.php');
+exit;
+✅ Pengguna langsung diarahkan ke halaman login setelah logout.
+
+## Hasil
+✅ Proses logout bekerja sesuai standar:
+- Semua data session dihapus.
+- Session dihancurkan sepenuhnya.
+- User langsung diarahkan ke halaman login.
+
+## Catatan
+- File logout.php sangat sederhana dan aman.
+- Tidak ada logika bercabang, sehingga tidak ada jalur eksekusi kompleks.
