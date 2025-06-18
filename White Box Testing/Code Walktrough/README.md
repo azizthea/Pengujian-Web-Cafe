@@ -26,17 +26,6 @@ Melakukan tinjauan menyeluruh terhadap proses login pengguna pada aplikasi **Caf
 | Feedback Pengguna        | ✅ Menampilkan error jika login gagal                                             |
 | Proteksi Brute Force     | ⚠️ Belum ada sistem limitasi percobaan login                                     |
 
----
-
-## ✅ Rekomendasi Perbaikan
-
-- Tambahkan `htmlspecialchars()` atau filter input untuk keamanan XSS.
-- Buat sistem **delay atau blokir sementara** setelah 3x gagal login.
-- Tambahkan logging untuk aktivitas login (opsional).
-- Tambahkan CSRF token pada form login untuk keamanan tambahan.
-
----
-
 ## 📌 Kesimpulan
 
 Login pada `login.php` **berjalan dengan baik** untuk autentikasi pengguna, dengan penggunaan `password_verify()` dan sesi login. Namun, **pengamanan input dan pembatasan login perlu ditambahkan** agar sistem lebih kuat terhadap serangan XSS dan brute force.
