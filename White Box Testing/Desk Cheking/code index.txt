@@ -1,0 +1,35 @@
+# White Box Testing – Desk Checking index.php
+
+## Tujuan
+Memastikan bahwa halaman utama menampilkan informasi cafe dengan benar, menyesuaikan tampilan sesuai status login pengguna, serta mendukung mode gelap/terang (dark mode).
+
+## Pemeriksaan Manual:
+
+✔️ 1. Autentikasi Session
+- Menggunakan `session_start()` di awal file.
+- Menampilkan tombol `Profile` dan `Logout` jika `$_SESSION['user_id']` terisi.
+- Jika belum login, tampilkan `Login` dan `Register`.
+✅ Logika session berjalan sesuai tujuan.
+
+✔️ 2. Struktur Halaman dan Konten
+- Menggunakan `<header>`, `<section>`, `<footer>` dan elemen semantic HTML lainnya.
+- Hero section, menu section, dan about section ditampilkan dengan konten yang valid dan dinamis.
+✅ Layout dan struktur jelas.
+
+✔️ 3. Komponen Menu
+- Tiap item menu memiliki gambar, harga, deskripsi, rating, dan kategori.
+- Tautan `href="p/product_detail.php?id=X"` sesuai struktur rute produk.
+✅ Tidak ditemukan error pada link maupun penamaan.
+
+✔️ 4. Tampilan Responsif dan Tema
+- Desain menggunakan CSS berbasis variable `:root` dengan dukungan `dark-mode`.
+- Tersedia tombol untuk mengubah mode tampilan (`Mode Gelap / Mode Terang`) dengan penyimpanan preferensi via `localStorage`.
+✅ Mode tampilan berjalan baik dan tersimpan saat reload.
+
+✔️ 5. Footer
+- Informasi jam operasional, alamat, kontak, dan media sosial ditampilkan dengan ikon dari Font Awesome.
+✅ Footer terstruktur dan informatif.
+
+✔️ 6. Judul Halaman
+```php
+$page_title = "Selamat Datang di Cafe Kami";
