@@ -1,0 +1,41 @@
+# White Box Testing – Desk Checking db.php
+
+## Tujuan
+Memastikan file `db.php` membuat koneksi ke database dengan benar menggunakan PDO (PHP Data Object) dan menangani error secara aman.
+
+## Pemeriksaan Manual:
+
+✔️ 1. Konfigurasi Database
+- Host: `localhost`
+- Database: `login_system`
+- Username: `root`
+- Password: kosong
+- Charset: `utf8mb4`
+✅ Semua parameter dideklarasikan dengan benar.
+
+✔️ 2. DSN (Data Source Name)
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+✅ Format DSN sesuai standar PDO.
+
+✔️ 3. Opsi PDO
+$options = [
+  PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+  PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+  PDO::ATTR_EMULATE_PREPARES   => false,
+];
+✅ Aman dan efisien: error dilempar sebagai exception, fetch sebagai array asosiatif, dan emulate prepares dimatikan.
+
+✔️ 4. Blok Try-Catch
+try {
+    $pdo = new PDO($dsn, $user, $pass, $options);
+} catch (\PDOException $e) {
+    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+}
+✅ Jika koneksi gagal, error ditangkap dan dilempar ulang secara eksplisit.
+
+## Hasil:
+✅ Seluruh logika pembuatan koneksi telah sesuai standar keamanan dan efisiensi PHP modern menggunakan PDO.
+
+## Catatan:
+- File ini bisa digunakan sebagai `require_once("db.php")` di file lain.
+- Aman digunakan karena tidak mengandung data sensitif seperti password publik.
