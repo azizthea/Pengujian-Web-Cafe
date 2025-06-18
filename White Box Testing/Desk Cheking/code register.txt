@@ -1,0 +1,52 @@
+# White Box Testing – Desk Checking register.php
+
+## Tujuan
+Memastikan bahwa proses pendaftaran pengguna berjalan sesuai logika, memvalidasi input dengan baik, dan menyimpan data ke database secara aman.
+
+## Pemeriksaan Manual
+
+✔️ 1. Inisialisasi dan Session
+- Memulai session dengan session_start()
+- Memuat koneksi database dari db.php
+✅ Siap menangani proses registrasi dan feedback pengguna.
+
+✔️ 2. Validasi Input
+- Username tidak boleh kosong dan minimal 4 karakter
+- Email tidak boleh kosong dan harus valid (dengan filter PHP)
+- Password tidak boleh kosong dan minimal 6 karakter
+- Password harus cocok dengan konfirmasi
+✅ Validasi dilakukan dengan tepat dan detail, menggunakan array $errors.
+
+✔️ 3. Pemeriksaan Data Ganda
+$stmt = $pdo->prepare('SELECT * FROM users WHERE username = ? OR email = ?');
+$stmt->execute([$username, $email]);
+✅ Query menggunakan prepared statement untuk menghindari SQL Injection.
+✅ Cek apakah username atau email sudah digunakan sebelumnya.
+
+✔️ 4. Penyimpanan ke Database
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$stmt = $pdo->prepare('INSERT INTO users (username, email, password) VALUES (?, ?, ?)');
+$stmt->execute([$username, $email, $hashed_password]);
+✅ Password disimpan dalam bentuk hash aman (bcrypt).
+✅ Data disimpan menggunakan prepared statement.
+
+✔️ 5. Penanganan Error Database
+- Kesalahan saat INSERT akan ditangkap dan ditampilkan ke user melalui $errors['database'].
+
+✔️ 6. Redirect dan Session Feedback
+- Jika sukses, set session success_message dan redirect ke login.php.
+
+✔️ 7. Form HTML
+- Menampilkan kembali input jika validasi gagal
+- Menampilkan pesan error di bawah field terkait
+- Menggunakan HTML5 validation (required dan type="email")
+
+## Hasil
+✅ Proses pendaftaran telah memenuhi standar keamanan dan UX:
+- Validasi input lengkap
+- SQL aman
+- Password tidak disimpan dalam bentuk plain text
+- Memberikan umpan balik yang jelas ke pengguna
+
+## Catatan
+- Disarankan menambahkan verifikasi email atau captcha untuk keamanan lanjutan.
