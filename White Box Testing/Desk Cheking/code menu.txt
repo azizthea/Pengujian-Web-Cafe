@@ -1,0 +1,57 @@
+# White Box Testing – Desk Checking menu.php
+
+## Tujuan
+Memastikan halaman menu menampilkan data makanan dari database, melindungi akses pengguna, dan mendukung fitur tampilan dinamis seperti mode gelap serta interaksi pengguna.
+
+## Pemeriksaan Manual
+
+✔️ 1. Autentikasi Akses
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ../login.php');
+    exit;
+}
+✅ Hanya user yang sudah login bisa mengakses halaman ini. Redirect otomatis jika belum login.
+
+✔️ 2. Mengambil Data Pengguna
+$user_stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');
+$user_stmt->execute([$userId]);
+$user = $user_stmt->fetch();
+✅ Mengambil data pengguna aktif berdasarkan user_id dari session. Aman karena menggunakan prepared statement.
+
+✔️ 3. Mengambil Data Menu
+$menu_stmt = $pdo->prepare('SELECT * FROM menu');
+$menu_stmt->execute();
+$menu_items = $menu_stmt->fetchAll();
+✅ Data menu diambil dari database menggunakan PDO, dibungkus dalam blok try-catch untuk menangani error.
+
+✔️ 4. Tampilan Menu
+- Tersedia 2 bentuk tampilan:
+  - Grid Cards: Menampilkan foto, nama, deskripsi, harga, dan tombol "Add to cart".
+  - Tabel: Menampilkan menu dalam bentuk tabel dengan urutan dan info lengkap.
+✅ Dua layout mempermudah UX dan mobile responsiveness.
+
+✔️ 5. Sidebar Navigasi & Profil
+- Menampilkan info pengguna
+- Link navigasi: Dashboard, Menu, Settings, Logout
+✅ Navigasi sesuai dashboard yang umum.
+
+✔️ 6. Tombol "Add to Cart"
+- Setiap tombol memiliki atribut data-id untuk identifikasi item
+- Aksi saat klik → alert (belum terhubung ke backend keranjang)
+✅ Simulasi interaktif sudah aktif.
+
+✔️ 7. Mode Gelap (Dark Mode)
+- Tersedia tombol untuk mengubah tema terang/gelap
+- Preferensi disimpan di localStorage dan diterapkan saat reload
+✅ UX modern dan nyaman digunakan.
+
+## Hasil
+✅ Semua logika utama telah berjalan baik:
+- Proteksi session
+- Pengambilan data dari DB
+- Tampilan responsif dan interaktif
+- Tidak ditemukan celah SQL Injection
+
+## Catatan
+- Akan lebih baik jika "Add to Cart" tersambung ke file cart.php atau AJAX.
+- Struktur file CSS dan JS bisa dipisahkan untuk efisiensi pemeliharaan.
