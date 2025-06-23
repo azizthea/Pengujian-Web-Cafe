@@ -1,4 +1,4 @@
-# 🧪 White Box Testing – Cafe App
+# 📁 White Box Testing – Cafe App
 
 Dokumen ini berisi hasil pengujian white box (desk checking) dari file-file utama dalam aplikasi Cafe berbasis PHP. Pengujian ini difokuskan pada logika internal kode dan pengendalian alur program.
 
